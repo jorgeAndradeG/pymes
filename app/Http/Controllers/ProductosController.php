@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class PerfilController extends Controller
+class ProductosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,8 @@ class PerfilController extends Controller
     public function index()
     {
         $user = Auth::user(); //OBTENEMOS AL USUARIO QUE ESTÁ LOGGEADO.
-        return view('pymes.perfil.editar-perfil')->with(['usuario' => $user]); //RETORNAMOS LA VISTA Y LUEGO LE ENVIAMOS AL USUARIO LOGGEADO PARA PODER MOSTRAR SUS DATOS EN LA VISTA.
+        $productos = Producto::Where('id_usuario',$user->id)->get(); //BUSCAMOS EN LA TABLA PRODUCTO A TODOS LOS PRODUCTOS QUE TENGA LA ID DEL USUARIO
+        return view('pymes.productos.productos',compact('productos')); //RETORNAMOS LA VISTA PRODUCTOS Y EN EL COMPACT LE PASAMOS UNA COLECCIÓN DE PRODUCTOS (ES COMO UN ARREGLO)
     }
 
     /**

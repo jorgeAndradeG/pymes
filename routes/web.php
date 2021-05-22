@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PerfilController;
+use App\Http\Controllers\ProductosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +24,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::resource('/perfil', PerfilController::class);
+
+Route::resource('/productos', ProductosController::class);
 
 require __DIR__.'/auth.php';

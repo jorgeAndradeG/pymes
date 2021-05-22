@@ -237,15 +237,15 @@ return [
         ],
 
         // Sidebar items:
-        ['header' => 'account_settings'],
+        ['header' => 'Perfil'],
         [
             'text' => 'profile',
             'url'  => 'perfil',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'text' => 'Productos',
+            'url'  => 'productos',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
