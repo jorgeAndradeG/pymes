@@ -19,7 +19,7 @@ class CreateProductoTable extends Migration
             $table->string('nombre');
             $table->integer('precio');
             $table->integer('stock');
-            $table->integer('es_oferta');
+            $table->integer('es_oferta')->nullable();
             $table->integer('precio_oferta')->nullable();
             $table->integer('estado');
             $table->longText('descripcion')->nullable();

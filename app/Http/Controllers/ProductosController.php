@@ -27,6 +27,8 @@ class ProductosController extends Controller
      */
     public function create()
     {
+      
+       return view('pymes.productos.create-producto');
         //
     }
 
@@ -38,6 +40,23 @@ class ProductosController extends Controller
      */
     public function store(Request $request)
     {
+        $user = auth::user();
+        if($request['estado'] == 'on' ){
+            $estado = 1; 
+        }else{
+            $estado = 0;
+        }
+        Producto::create([
+            "nombre" => $request['nombre'],       
+            "precio" => $request['precio'],
+            "stock" =>$request['stock'],
+            "id_usuario" => $user->id,
+            "es_oferta" => $request['es_oferta'],
+            "precio_oferta" =>$request['precio_oferta'],
+            "estado" => $estado,
+            "descripcion" => $request['descripcion'],           
+            ]);
+            return redirect("/productos");
         //
     }
 
@@ -60,7 +79,8 @@ class ProductosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $producto = Producto::findOrFail($id);
+        return view("pymes.productos.edit-productos")->with(["producto" => $producto]);
     }
 
     /**
@@ -72,7 +92,7 @@ class ProductosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**

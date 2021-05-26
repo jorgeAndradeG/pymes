@@ -5,6 +5,8 @@
 
 @section('content')
     <div class="container-fluid">
+    <a href="{{action('App\Http\Controllers\ProductosController@create')}}" type="button" class="btn btn-success ">agregar producto</a>
+    <br>
         <table class="table">
             <thead>
                 <tr>
@@ -21,8 +23,8 @@
                 <th>{{$producto->nombre}}</th>
                 <td>{{$producto->stock}}</td>
                 <td>{{$producto->precio}}</td>
-                <td><button type="button" class="btn btn-success btn-sm"><i class="far fa-edit"></i></button></td> <!-- BOTÓN PARA EDITAR UN PRODUCTO -->
-                <td><button type="button" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></button></td> <!-- bOTÓN PARA ELIMINAR UN PRODUCTO -->
+                <td><a type="button" class="btn btn-success btn-sm" href="{{action('App\Http\Controllers\ProductosController@edit', $producto->id)}}"><i class="far fa-edit"></i></a></td> <!-- BOTÓN PARA EDITAR UN PRODUCTO -->
+                <td><a type="button" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></a></td> <!-- bOTÓN PARA ELIMINAR UN PRODUCTO -->
                 </tr>
             @endforeach
             </tbody>
