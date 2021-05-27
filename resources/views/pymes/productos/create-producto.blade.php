@@ -16,6 +16,11 @@
                         <label for="nombre">Nombre</label>
                         <input type="text" class="form-control" name="nombre" id="nombre" required >
                     </div>
+
+                    <div class="form-floating mb-3">
+                        <label for="descripcion">Descripción</label>
+                        <textarea type="text" class="form-control" name="descripcion" id="descripcion" required ></textarea>
+                    </div>
                     
                     <div class="form-floating mb-3">
                         <label for="precio">Precio</label>
@@ -34,12 +39,12 @@
 
                     <div class="form-check" onclick="oferta()">
                         <input class="form-check-input" type="checkbox" value="" id="es_oferta" >
-                         <label class="form-check-label" for="es_oferta"  > Es oferta </label>
+                         <label class="form-check-label" for="es_oferta">¿Es oferta?</label>
                     </div>
                     <br>
 
                     <div class="form-floating mb-3" id="precioO" style="display:none">
-                        <label for="precio_oferta">precio oferta</label>
+                        <label for="precio_oferta">Precio oferta</label>
                         <input type="number" class="form-control" name="precio_oferta" id="precio_oferta" >
                     </div>
                     

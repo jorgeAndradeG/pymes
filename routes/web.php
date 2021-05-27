@@ -27,4 +27,5 @@ Route::resource('/perfil', PerfilController::class);
 
 Route::resource('/productos', ProductosController::class);
 
+
 require __DIR__.'/auth.php';

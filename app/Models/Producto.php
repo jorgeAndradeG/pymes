@@ -12,6 +12,6 @@ class Producto extends Model
     protected $connection = 'mysql';
     public $timestamps = true;
 	protected $table = 'producto';	
-	protected $fillable = ['nombre','precio','stock','es_oferta','precio_oferta','estado','id_usuario'];
+	protected $fillable = ['nombre','precio','stock','es_oferta','precio_oferta','estado','id_usuario','descripcion'];
 
 }

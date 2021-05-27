@@ -46,12 +46,17 @@ class ProductosController extends Controller
         }else{
             $estado = 0;
         }
+        if($request['es_oferta'] == 'on' ){
+            $oferta = 1; 
+        }else{
+            $oferta = 0;
+        }
         Producto::create([
             "nombre" => $request['nombre'],       
             "precio" => $request['precio'],
             "stock" =>$request['stock'],
             "id_usuario" => $user->id,
-            "es_oferta" => $request['es_oferta'],
+            "es_oferta" => $oferta,
             "precio_oferta" =>$request['precio_oferta'],
             "estado" => $estado,
             "descripcion" => $request['descripcion'],           
@@ -92,7 +97,29 @@ class ProductosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        if($request['estado'] == 'on' ){
+            $estado = 1; 
+        }else{
+            $estado = 0;
+        }
+        if($request['es_oferta'] == 'on' ){
+            $oferta = 1; 
+        }else{
+            $oferta = 0;
+        }
+
+        $producto = Producto::findOrFail($id);
+        $producto->nombre = $request['nombre'];
+        $producto->descripcion = $request['descripcion'];
+        $producto->precio = $request['precio'];
+        $producto->stock = $request['stock'];
+        $producto->es_oferta = $oferta;
+        $producto->precio_oferta = $request['precio_oferta'];
+        $producto->estado = $estado;
+
+        $producto->save();
+
+        return redirect('/productos');
     }
 
     /**
@@ -105,4 +132,5 @@ class ProductosController extends Controller
     {
         //
     }
+   
 }

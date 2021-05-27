@@ -84,28 +84,28 @@ class PerfilController extends Controller
 
 
         //PARA SUBIR LAS IMÁGENES
-        
-        $file = $request['file'];//RESCATAMOS LA IMAGEN DEL FORMULARIO
-        $nombre = $file->getClientOriginalName();
-        $formato = explode(".",$nombre);
-        $formato = end($formato);
+        if(isset($request['file'])){
+            $file = $request['file'];//RESCATAMOS LA IMAGEN DEL FORMULARIO
+            $nombre = $file->getClientOriginalName();
+            $formato = explode(".",$nombre);
+            $formato = end($formato);
 
-        if (strtolower($formato) != "jpg" && strtolower($formato) != "jpeg" && strtolower($formato) != "png" )
-        {
-            //CUANDO NO ES IMAGEN
-            $user = Auth::user(); //OBTENEMOS AL USUARIO QUE ESTÁ LOGGEADO.
-            return view('pymes.perfil.editar-perfil')->with(['usuario' => $user, 'msg' => $file]); //RETORNAMOS LA VISTA Y EL MENSAJE DE ERROR
-        } else if(strtolower($formato) == "jpg" || strtolower($formato) == "jpeg" || strtolower($formato) == "png") //CUANDO SI ES UNA IMAGEN
-        {
-        
-            $fecha = getdate();
-            $fechaimg = strval($fecha["year"]) . strval($fecha["mon"]) . strval($fecha["mday"]) . strval($fecha["hours"]) . strval($fecha["minutes"]) . strval($fecha["seconds"]) . "_";
+            if (strtolower($formato) != "jpg" && strtolower($formato) != "jpeg" && strtolower($formato) != "png" )
+            {
+                //CUANDO NO ES IMAGEN
+                $user = Auth::user(); //OBTENEMOS AL USUARIO QUE ESTÁ LOGGEADO.
+                return view('pymes.perfil.editar-perfil')->with(['usuario' => $user, 'msg' => 'Ingrese una imagen con formato válido (JPG, PNG o JPEG)']); //RETORNAMOS LA VISTA Y EL MENSAJE DE ERROR
+            } else if(strtolower($formato) == "jpg" || strtolower($formato) == "jpeg" || strtolower($formato) == "png") //CUANDO SI ES UNA IMAGEN
+            {
+            
+                $fecha = getdate();
+                $fechaimg = strval($fecha["year"]) . strval($fecha["mon"]) . strval($fecha["mday"]) . strval($fecha["hours"]) . strval($fecha["minutes"]) . strval($fecha["seconds"]) . "_";
 
-            Image::make($file)->resize(600,400)->save('img/' . $fechaimg . $nombre);
-        };
+                Image::make($file)->resize(600,400)->save('img/' . $fechaimg . $nombre);
+            };
 
-        $usuario->imagen_perfil = '/img/' . $fechaimg . $nombre;
-
+            $usuario->imagen_perfil = '/img/' . $fechaimg . $nombre;
+        }
 
         //GUARDAMOS LOS DATOS DE CADA USUARIO
         $usuario->save();
