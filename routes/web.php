@@ -24,8 +24,10 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::resource('/perfil', PerfilController::class);
+Route::post('/perfil/deshabilitar', [PerfilController::class,'deshabilitar']);
 
 Route::resource('/productos', ProductosController::class);
+
 
 
 require __DIR__.'/auth.php';

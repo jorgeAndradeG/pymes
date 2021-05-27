@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Validator;
 
@@ -123,5 +124,27 @@ class PerfilController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function deshabilitar(Request $request){
+        $pass = $request['passDeshabilitar'];
+        $usuario = Auth::user();
+  
+        if(Hash::check($pass, $usuario->password)){
+            $usuario->estado = 0;
+            $usuario->save();
+
+            Auth::guard('web')->logout();
+
+            $request->session()->invalidate();
+
+            $request->session()->regenerateToken();
+
+            return redirect('/');
+        }
+        else{
+            return view('pymes.perfil.editar-perfil')->with(['usuario' => $usuario, 'msg' => "Contraseña Incorrecta."]); //RETORNAMOS LA VISTA Y LUEGO LE ENVIAMOS AL USUARIO LOGGEADO PARA PODER MOSTRAR SUS DATOS EN LA VISTA.
+
+        }
     }
 }

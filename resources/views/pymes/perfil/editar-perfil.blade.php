@@ -20,7 +20,7 @@
                     @csrf <!--PARA SEGURIDAD-->
                     @method('PATCH') <!-- ESTO SE COLOCA PARA QUE PUEDA INGRESAR LOS DATOS A LA BD, YA QUE NO ESTÁ DEFINIDO COMO POST EN EL WEB -->
                     @if(isset($msg))
-                        {{$msg}}
+                        <p style="color:red; text-align:center;">{{$msg}}</p>
                     @endif
                     <div class="form-floating mb-3">
                         <label for="nombre">Nombre</label>
@@ -79,9 +79,9 @@
                     <button type="submit" class="btn btn-success" id="botonEditar" disabled>Actualizar Datos</button>
                     </div>
                     <div class="col-6" style="text-align:right">
-                    <a type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Deshabilitar Cuenta
-                    </a>
+                    </button>
 
                     </div>
                     </div>
@@ -101,16 +101,26 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Deshabilitar Cuenta</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <p>Modal body text goes here.</p>
+                
+                <form  method="POST" action="{{action('App\Http\Controllers\PerfilController@deshabilitar')}}" enctype="multipart/form-data">
+                @csrf
+                    <div class="modal-body">
+                    <div class="form-floating mb-3">
+                            <label for="passDeshabilitar">Para deshabilitar cuenta ingrese su contraseña:</label>
+                            <input type="password" class="form-control" name="passDeshabilitar" id="passDeshabilitar">
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Deshabilitar</button>
+                        </div>
+                </form>
+               
+                    
                 </div>
             </div>
 </div>
