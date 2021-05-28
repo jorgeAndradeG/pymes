@@ -27,6 +27,7 @@ Route::resource('/perfil', PerfilController::class);
 Route::post('/perfil/deshabilitar', [PerfilController::class,'deshabilitar']);
 
 Route::resource('/productos', ProductosController::class);
+Route::post('/productos/eliminar', [ProductosController::class, 'eliminar']);
 
 
 

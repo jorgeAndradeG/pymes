@@ -132,5 +132,10 @@ class ProductosController extends Controller
     {
         //
     }
+    public function eliminar(Request $request){
+        $producto = Producto::destroy($request['modalid']);
+        return redirect('/productos');
+
+    }
    
 }
