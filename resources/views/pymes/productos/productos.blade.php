@@ -28,7 +28,7 @@
                 <th>{{$producto->nombre}}</th>
                 <td>{{$producto->stock}}</td>
                 @if($producto->es_oferta == 1)
-                    <td><p><s>{{$producto->precio}}</s><br>{{$producto->precio_oferta}}</p></td>
+                    <td><p><s>{{$producto->precio}}</s> {{$producto->precio_oferta}} <span class="badge bg-success">Oferta</span></p></td>
                 @else
                     <td>{{$producto->precio}}</td>
                 @endif

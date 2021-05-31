@@ -1,4 +1,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
 @extends('adminlte::page')
 
 @section('title', 'Dashboard')
@@ -9,7 +13,8 @@
         <div class="row align-items-start">
             <div class="col-12">
                 <!-- Botón para activar la función JavaScript de al final y poder editar los datos de perfil.-->
-                <h3 style="text-align:center;">Datos de Perfil  <button type="button" class="btn btn-success btn-sm" onclick=editarPerfil()><i class="far fa-edit"></i></button></h3>
+                <h3 style="text-align:center;">Datos de Perfil  
+                <button type="button" class="btn btn-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="right" title=" Editar Perfil " onclick=editarPerfil()><i class="far fa-edit"></i></button></h3>
                 <br>
 
                 <!-- ACÁ LLAMAMOS AL MÉTODO UPDATE QUE SIRVE PARA ACTUALIZAR LOS DATOS DEL PERFIL, Y LE PASAMOS LA ID DEL USUARIO -->
@@ -151,4 +156,10 @@
         }
     }
     
+</script>
+
+<script>
+    $(document).ready(function(){
+    $('[data-bs-toggle="tooltip"]').tooltip();
+    });
 </script>
