@@ -16,6 +16,16 @@
                 <h3 style="text-align:center;">Datos de Perfil  
                 <button type="button" class="btn btn-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="right" title=" Editar Perfil " onclick=editarPerfil()><i class="far fa-edit"></i></button></h3>
                 <br>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
 
                 <!-- ACÁ LLAMAMOS AL MÉTODO UPDATE QUE SIRVE PARA ACTUALIZAR LOS DATOS DEL PERFIL, Y LE PASAMOS LA ID DEL USUARIO -->
                 <form method="POST" action="{{action('App\Http\Controllers\PerfilController@update',$usuario->id)}}" enctype="multipart/form-data"> 

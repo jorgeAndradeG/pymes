@@ -8,6 +8,7 @@
         <div class="Row align-items-start">
              <div class = "col-12">
              <h2 style= "text-align:center"> Editar Producto</h2>
+          
              <form method="POST" action="{{action('App\Http\Controllers\ProductosController@update', $producto->id)}}" enctype="multipart/form-data"> 
                     @csrf 
                     @method('PATCH') 

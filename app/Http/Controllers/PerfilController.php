@@ -76,9 +76,15 @@ class PerfilController extends Controller
     {
         $usuario = User::findOrFail($id); //BUSCAMOS AL USUARIO EN LA BD CON SU ID
         //RESCATAMOS LOS DATOS DEL FORMULARIO Y LOS ASIGNAMOS EN LOS CAMPOS CORRESPONDIENTES
-        $usuario->name = $request['name']; 
-        $usuario->direccion = $request['direccion'];
-        $usuario->telefono = $request['telefono'];
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'direccion'=>'required|max:255',
+            'telefono'=>'required|min:8|max:8',
+        ]);
+
+        $usuario->name = $request->name; 
+        $usuario->direccion = $request->direccion;
+        $usuario->telefono = $request->telefono;
         $usuario->facebook = $request['facebook'];
         $usuario->instagram = $request['instagram'];
 
