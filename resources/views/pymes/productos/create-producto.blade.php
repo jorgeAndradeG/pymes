@@ -4,6 +4,15 @@
 
 @section('content')
 <div class="container">
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
         <div class="Row align-items-start">
              <div class = "col-12">
              <h2 style= "text-align:center"> Agregar Producto</h2>

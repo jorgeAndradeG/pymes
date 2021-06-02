@@ -40,6 +40,14 @@ class ProductosController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+        'nombre' => 'required|string|max:255',
+        'precio' => 'required|integer',
+        'stock' => 'required|integer',
+        'descripcion' => 'string|max:255',    
+        ]);
+
         $user = auth::user();
         if($request['estado'] == 'on' ){
             $estado = 1; 
@@ -52,14 +60,14 @@ class ProductosController extends Controller
             $oferta = 0;
         }
         Producto::create([
-            "nombre" => $request['nombre'],       
-            "precio" => $request['precio'],
-            "stock" =>$request['stock'],
+            "nombre" => $request->nombre,       
+            "precio" => $request->precio,
+            "stock" =>$request->stock,
             "id_usuario" => $user->id,
             "es_oferta" => $oferta,
-            "precio_oferta" =>$request['precio_oferta'],
+            "precio_oferta" =>$request->precio_oferta,
             "estado" => $estado,
-            "descripcion" => $request['descripcion'],           
+            "descripcion" => $request->descripcion,           
             ]);
             return redirect("/productos");
         //
@@ -97,6 +105,9 @@ class ProductosController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+      
+
         if($request['estado'] == 'on' ){
             $estado = 1; 
         }else{

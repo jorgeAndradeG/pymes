@@ -7,6 +7,7 @@
 
 @section('content')
     <div class="container-fluid">
+
     <div class="form-floating mb-3" style="text-align:right;">
         <a href="{{action('App\Http\Controllers\ProductosController@create')}}" type="button" class="btn btn-success ">Agregar Producto</a>
     </div>
