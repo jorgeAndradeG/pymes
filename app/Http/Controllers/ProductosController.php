@@ -43,8 +43,8 @@ class ProductosController extends Controller
 
         $request->validate([
         'nombre' => 'required|string|max:255',
-        'precio' => 'required|integer',
-        'stock' => 'required|integer',
+        'precio' => 'required|integer|gt:0',
+        'stock' => 'required|integer|gt:0',
         'descripcion' => 'string|max:255',    
         ]);
 
