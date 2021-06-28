@@ -79,7 +79,7 @@ class PerfilController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'direccion'=>'required|max:255',
-            'telefono'=>'required|min:8|max:8',
+            'telefono'=>'required|min:8|max:8|gt:0',
         ]);
 
         $usuario->name = $request->name; 
