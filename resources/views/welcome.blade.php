@@ -98,11 +98,9 @@
                     </div>
                 </div>
                 <div class="col-2"> 
-                "nommbre producto en oferta"
-                <br>
-                <br>
-                <br>
-                <br>
+                "nombre producto en oferta"
+                <br><br><br><br><br><br>
+               
                 Precio producto 
                 precio nuevo
                 pyme que vende el producto
@@ -166,53 +164,56 @@
 
         <!--Fin de primera seccion de categorias -->
 
+                    
+                <div class="row">
                 
-             <div class="row">
-            
-            <h4> Nombre categoria</h4>
-            <div class="col-2">
-                <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2020/07/papas-fritas-para-freir.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
+                <h4> Nombre categoria</h4>
+                <div class="col-2">
+                    <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2020/07/papas-fritas-para-freir.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="col-1"></div>
-            
-            <div class="col-2">
-                <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="https://www.ecured.cu/images/1/14/1603480088968.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
+                
+                <div class="col-1"></div>
+                
+                <div class="col-2">
+                    <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="https://www.ecured.cu/images/1/14/1603480088968.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="col-1"></div>
+                <div class="col-1"></div>
 
-            <div class="col-2">
-                <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="http://web.inia.cl/wp-content/uploads/2018/02/Patagonia-INIA-1a-2-300x282.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
+                <div class="col-2">
+                    <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="http://web.inia.cl/wp-content/uploads/2018/02/Patagonia-INIA-1a-2-300x282.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                    </div>
                 </div>
-            </div>
-           
-            <div class="col-1"></div>
+            
+                <div class="col-1"></div>
 
-            <div class="col-2">
-                <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="https://scm-assets.constant.co/scm/unilever/2bb5223be0548fcc55c230aa5f951219/84b57886-fee2-4f98-8920-027f8afd654c.png" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
+                <div class="col-2">
+                    <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="https://scm-assets.constant.co/scm/unilever/2bb5223be0548fcc55c230aa5f951219/84b57886-fee2-4f98-8920-027f8afd654c.png" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                    </div>
                 </div>
+                                    
             </div>
-                                  
-         </div>
+         <!-- Fin de las segundas cards de categorias --->
+
+
         </div>
        
     </body>
