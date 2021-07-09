@@ -2,6 +2,11 @@
 
 @section ('title','Dashboard')
 
+@section ('css')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/dropzone.min.css" integrity="sha512-jU/7UFiaW5UBGODEopEqnbIAHOI8fO6T99m7Tsmqs2gkdujByJfkCbbfPSN4Wlqlb9TGnsuC0YgUgWkRBK7B9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+@endsection
+
+
 @section('content')
 <div class="container">
 @if ($errors->any())
@@ -41,11 +46,6 @@
                         <input type="number" class="form-control" name="stock" id="stock" required>
                     </div>
 
-                    <div class="form-floating mb-3">
-                        <label for="imagen">Imagen</label>
-                        <input type="file" class="form-control" name="" id="imagen">
-                    </div>
-
                     <div class="form-check" onclick="oferta()">
                         <input class="form-check-input" type="checkbox" value="" id="es_oferta" >
                          <label class="form-check-label" for="es_oferta">¿Es oferta?</label>
@@ -65,12 +65,31 @@
                     <br>
                     <button type="submit" class="btn btn-success" id="botonAgregar">Agregar producto</button>
                     </form>
-             </div>
-            
-            
-         </div>
+                    <form method="POST" action="{{action('App\Http\Controllers\ProductosController@store')}}"
+                    class="dropzone"
+                    id="my-awesome-dropzone"></form>
 </div>
 @stop
+
+
+@section('js')
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js"></script>
+ <script>   
+    Dropzone.options.myAwesomeDropzone = {
+    headers:{
+        'X-CSRF-TOKEN' : "{{csrf_token()}}"
+    },
+    dictDefaultMessage: "Arrastre una imagen al reacuadro para subirlo",
+    acceptedFiles: "image/*",
+    maxFiles: 3,
+    };
+ </script>
+@endsection
+
+
+
+
+
 <script>
 function oferta(){
 

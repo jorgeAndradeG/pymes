@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage; 
 
 class ProductosController extends Controller
 {
@@ -45,7 +46,14 @@ class ProductosController extends Controller
         'nombre' => 'required|string|max:255',
         'precio' => 'required|integer|gt:0',
         'stock' => 'required|integer|gt:0',
-        'descripcion' => 'string|max:255',    
+        'descripcion' => 'string|max:255',  
+        'file' => 'required|image|max:2048',  
+        ]);
+
+        $imagenes = $request->file('file')->store('public/imagenes');
+        $url = Storage::url(imagenes);
+        Producto::create([
+            'url' =>$url
         ]);
 
         $user = auth::user();
@@ -64,6 +72,7 @@ class ProductosController extends Controller
             "precio" => $request->precio,
             "stock" =>$request->stock,
             "id_usuario" => $user->id,
+            'url' =>$url,
             "es_oferta" => $oferta,
             "precio_oferta" =>$request->precio_oferta,
             "estado" => $estado,

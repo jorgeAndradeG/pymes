@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\VerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +30,11 @@ Route::post('/perfil/deshabilitar', [PerfilController::class,'deshabilitar']);
 
 Route::resource('/productos', ProductosController::class);
 Route::post('/productos/eliminar', [ProductosController::class, 'eliminar']);
+
+
+Route::resource('/administrador', AdminController::class);
+
+Route::resource('/ver', VerController::class);
 
 
 
