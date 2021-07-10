@@ -16,7 +16,7 @@ class CreateSoporteTable extends Migration
         Schema::create('soporte', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_usuario')->unsigned();
-            $table->integer('id_admin')->unsigned();
+            $table->integer('id_admin')->unsigned()->nullable();
             $table->longText('problema');
             $table->integer('estado');
             $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');

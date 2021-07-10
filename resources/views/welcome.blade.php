@@ -1,6 +1,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -101,9 +102,10 @@
                 "nombre producto en oferta"
                 <br><br><br><br><br><br>
                
-                Precio producto 
-                precio nuevo
-                pyme que vende el producto
+                <p> Precio producto</p>
+                <p> Precio nuevo</p>
+                <p> Pyme que lo vende </p>
+             
                 </div>
                 <div class="col-s2"></div>
              </div>
@@ -113,12 +115,13 @@
 
              <div class="row">
             
-                <h4> Nombre categoria</h4>
+                <h4> Pymes </h4>
                 <div class="col-2">
                     <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src="https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2020/07/papas-fritas-para-freir.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text">"Nombre usuario"</p>
+                            <div class="card-body" style="text-align: center">
+                                <p class="card-text">Nombre usuario</p>
+                                <a href="" type="button" class="btn btn-success ">Seleccionar </a>
                             </div>
                     </div>
                 </div>
@@ -128,8 +131,9 @@
                 <div class="col-2">
                     <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src="https://www.ecured.cu/images/1/14/1603480088968.jpg" alt="Card image cap">
-                            <div class="card-body">
+                            <div class="card-body" style="text-align: center">
                                 <p class="card-text">Nombre usuario</p>
+                                <a href="" type="button" class="btn btn-success ">Seleccionar </a>
                             </div>
                     </div>
                 </div>
@@ -139,8 +143,9 @@
                 <div class="col-2">
                     <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src="http://web.inia.cl/wp-content/uploads/2018/02/Patagonia-INIA-1a-2-300x282.jpg" alt="Card image cap">
-                            <div class="card-body">
+                            <div class="card-body" style="text-align: center">
                                 <p class="card-text">Nombre usuario</p>
+                                <a href="" type="button" class="btn btn-success ">Seleccionar </a>
                             </div>
                     </div>
                 </div>

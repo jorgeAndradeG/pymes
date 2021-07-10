@@ -27,7 +27,7 @@ class AdminSoporteController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -38,7 +38,7 @@ class AdminSoporteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
     }
 
     /**

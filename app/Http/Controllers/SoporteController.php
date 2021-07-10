@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Soporte;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -37,7 +38,18 @@ class SoporteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'problema' => 'required|string|max:255',
+                
+         ]);
+
+            $user= Auth::user();
+            Soporte::create([
+
+                "problema" => $request->problema,
+                "id_usuario" =>$user->id,
+            ]);
+            return redirect("/perfil");
     }
 
     /**

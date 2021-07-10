@@ -23,7 +23,11 @@
     <div class="container">
         
              <h2 style="text-align:center">Soporte Tecnico</h2>
-             <form action="">
+             <form method="POST" action="{{action('App\Http\Controllers\SoporteController@store')}}" enctype="multipart/form-data">
+             @csrf  
+                    @if(isset($msg))
+                        {{$msg}}
+                    @endif
                   <div class="row">
                      <div class="col-12">   
                      <br>
