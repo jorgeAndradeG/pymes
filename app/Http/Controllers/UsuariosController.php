@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Models\Soporte;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class AdminSoporteController extends Controller
+class UsuariosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +14,8 @@ class AdminSoporteController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        $soportes = Soporte::Where('estado',1)->get();
-        
-        return view ('pymes.administracion.pull-soportes',compact('soportes','users'));
+        $usuarios = User::all();
+        return view('pymes.administracion.listado-pymes',compact('usuarios'));
     }
 
     /**
@@ -29,7 +25,7 @@ class AdminSoporteController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -40,7 +36,7 @@ class AdminSoporteController extends Controller
      */
     public function store(Request $request)
     {
-       
+        //
     }
 
     /**
@@ -62,8 +58,7 @@ class AdminSoporteController extends Controller
      */
     public function edit($id)
     {
-        $soporte = Soporte::findOrFail($id);
-        return view('pymes.administracion.ver-problema')->with(["soporte" => $soporte]);
+        //
     }
 
     /**
@@ -73,13 +68,9 @@ class AdminSoporteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update(Request $request, $id)
     {
-        $soporte = Soporte::findOrFail($id);
-        $soporte->estado = 0;
-        $soporte->save();
-        
-        return redirect('/administracion');
+        //
     }
 
     /**

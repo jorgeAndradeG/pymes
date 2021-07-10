@@ -10,33 +10,42 @@
 
 <div class="container-fluid">
 
-<div class="form-floating mb-3" style="text-align:right;">
+    <div class="form-floating mb-3" style="text-align:right;">
 
-</div>
-<br>
+    </div>
+    <br>
     <table class="table">
         <thead>
             <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Correo</th>
-            <th scope="col">Estado</th>
-            <th scope="col">Ver Problema</th>
-            
+                <th scope="col">Nombre Usuario</th>
+                <th scope="col">Correo Usuario</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Ver Problema</th>
+
             </tr>
         </thead>
         <tbody>
-        @foreach($soportes as $soporte) <!-- RECORREMOS EL "ARREGLO" DE PRODUCTOS QUE ENVIAMOS DESDE EL CONTROLADOR -->
+            @foreach($soportes as $soporte)
+            @foreach($users as $user)
+            @if($user->id == $soporte->id_usuario)
             <tr>
-            <th>{{$soporte->id_usuario}}</th>
-           <!-- <td>{{$soporte->id_admin}}</td> -->
-            @if($producto->estado == 1)
-                <td><p style="color:green">Activo</p></td>
-            @else
-                <td><p style="color:red">Inactivo</p></td>
-            @endif
-            <td><a type="button" class="btn btn-success btn-sm" href="{{action('App\Http\Controllers\AdminSoporteController@edit', $producto->id)}}"><i class="far fa-edit"></i></a></td> <!-- BOTÓN PARA EDITAR UN PRODUCTO -->
+                <td>{{$user->name}}</td>
+                <td>{{$user->email}}</td>
+                @if($soporte->estado == 1)
+                <td>
+                    <p style="color:green">Activo</p>
+                </td>
+                @else
+                <td>
+                    <p style="color:red">Inactivo</p>
+                </td>
+                @endif
+                <td><a type="button" class="btn btn-success btn-sm" href="{{action('App\Http\Controllers\AdminSoporteController@edit', $soporte->id)}}"><i class="far fa-edit"></i></a></td> <!-- BOTÓN PARA EDITAR UN PRODUCTO -->
             </tr>
-        @endforeach
+            @break
+            @endif
+            @endforeach
+            @endforeach
         </tbody>
     </table>
 </div>

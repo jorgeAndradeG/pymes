@@ -31,7 +31,9 @@
                   <div class="row">
                      <div class="col-12">   
                      <br>
+                        <p style="text-align:center;">Ingresa tu problema y te ayudaremos lo más pronto posible.</p>
                          <label for="problema">Problema:</label>  
+                         @if($value == )
                          <textarea name="problema" id="problema" cols="30" rows="5" class="form-control"></textarea>
                     </div>
                  </div>

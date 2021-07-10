@@ -16,7 +16,7 @@ class SoporteController extends Controller
      */
     public function index()
     {
-        $user = Auth::user(); 
+        $user = Auth::user();
         return view('pymes.perfil.soporte-tecnico');
     }
 
@@ -45,9 +45,10 @@ class SoporteController extends Controller
 
             $user= Auth::user();
             Soporte::create([
-
                 "problema" => $request->problema,
                 "id_usuario" =>$user->id,
+                "estado" => 1,
+
             ]);
             return redirect("/perfil");
     }

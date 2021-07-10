@@ -251,7 +251,12 @@ return [
         [
             'text' => 'Soporte Tecnico',
             'url'  => 'soporte',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fas fa-hands-helping',
+        ],
+        [
+            'text' => 'Lista de Usuarios',
+            'url'  => 'usuarios',
+            'icon' => 'fas fa-users',
         ],
 
         ['header' => 'labels'],

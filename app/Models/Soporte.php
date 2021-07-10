@@ -12,6 +12,6 @@ class Soporte extends Model
     protected $connection = 'mysql';
     public $timestamps = true;
 	protected $table = 'soporte';	
-	protected $fillable = ['problema','estado','id_admin','id_usuario'];
+	protected $fillable = ['problema','estado','id_admin','id_usuario','estado'];
 
 }
