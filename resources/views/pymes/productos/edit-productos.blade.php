@@ -37,7 +37,9 @@
 
                     <div class="form-floating mb-3">
                         <label for="imagen">Imagen</label>
-                        <input type="file" class="form-control" name="imagen" id="imagen">
+                            <img src="/{{$imagen->url_imagen}}" class="img-thumbnail" alt="..." width="200" height="100">
+
+                        <input type="file" class="form-control" name="file" id="imagen">
                     </div>
 
                     @if($producto->es_oferta == 1)

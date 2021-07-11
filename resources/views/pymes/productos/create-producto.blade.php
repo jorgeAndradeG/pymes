@@ -43,7 +43,7 @@
 
                     <div class="form-floating mb-3">
                         <label for="imagen">Imagen</label>
-                        <input type="file" class="form-control" name="" id="imagen">
+                        <input type="file" class="form-control" name="file" id="imagen">
                     </div>
 
                     <div class="form-check" onclick="oferta()">

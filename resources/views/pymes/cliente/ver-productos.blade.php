@@ -39,7 +39,7 @@
 
                             <div class="col-md-4 text-md-center">
 
-                                <img style="with: 100px; height: 100px" src="https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2020/07/papas-fritas-para-freir.jpg" alt="">
+                                <img style="width: 100px; height: 100px" src="https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2020/07/papas-fritas-para-freir.jpg" alt="">
 
                                 <h4>Producto "X"</h4>
 
