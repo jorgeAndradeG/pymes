@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PerfilController;
+use App\Http\Controllers\PruebaController;
 use App\Http\Controllers\SoporteController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\AdminSoporteController;
@@ -38,5 +39,7 @@ Route::post('/admin/eliminar', [AdminController::class, 'eliminar']);
 Route::resource('/soporte', SoporteController::class);
 
 Route::resource('/administracion', AdminSoporteController::class);
+
+Route::resource('/pymes', PruebaController::class);
 
 require __DIR__.'/auth.php';

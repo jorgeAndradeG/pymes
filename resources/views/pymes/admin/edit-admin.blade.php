@@ -41,7 +41,7 @@
 
             
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="estado" id="estado" value="{{$user->estado}}"> 
+                        <input class="form-check-input" type="checkbox" name="estado" id="estado" value="{{$user->estado}}" {{($user->estado == 1?'checked':'')}}> 
                         <label class="form-check-label" for="estado">¿Habilitar Administrador?</label>
                     </div>
 

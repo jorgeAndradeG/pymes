@@ -2,23 +2,23 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
+
+
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Pymes Regionales</title>
-
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
-
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
     <!-- Styles -->
     <style>
         /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -408,8 +408,8 @@
     </style>
 </head>
 
-<body class="antialiased">
-    <div class="container">
+<body>
+<div class="container">
         <div class="row justify-content-md-center">
             <div class="col-4">
                 <a href="welcome">
@@ -438,168 +438,48 @@
 
     </div>
     <hr>
+    <br><br>
     <div class="container">
 
-        <!-- Carousel de prueba   -->
-        <div class="row">
-            <div class="col-2"></div>
-            <div class="col-6">
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
+        <div class="container">
 
-                        <div class="carousel-item active">
-                            <img src="https://chile.as.com/chile/imagenes/2021/06/18/futbol/1624050093_672321_1624051358_noticia_normal_recorte1.jpg" class="img-fluid" alt="...">
+            <div class="col-md-12">
+
+                <div class="card">
+
+                    <div class="card-header">Bienvenido(a)</div>
+
+                    <div class="card-header">Catologo de productos</div>
+
+                    <div class="card-header" justify-content-center>
+
+                        <div class="row">
+
+                            <div class="col-md-4 text-md-center">
+
+                                <img style="width: 100px; height: 100px" src="https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2020/07/papas-fritas-para-freir.jpg" alt="">
+
+                                <h5>Producto "X"</h5>
+
+                                <h5>Precio: "X"</h5>
+
+                                <a class="btn btn-primary">Detalles</a>
+
+                            </div>
+
                         </div>
 
-                        <div class="carousel-item">
-                            <img src="https://imagenes.t13.cl/images/original/2021/06/1624052490-0009ck76m.jpg" class="img-fluid" alt="...">
-                        </div>
-
-                        <div class="carousel-item">
-                            <img src="https://www.wapptv.cl/wp-content/uploads/2021/06/IMG_0952.jpg" class="img-fluid " alt="...">
-                        </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-            <div class="col-2">
-                "nombre producto en oferta"
-                <br><br><br><br><br><br>
 
-                <p> Precio producto</p>
-                <p> Precio nuevo</p>
-                <p> Pyme que lo vende </p>
-
-            </div>
-            <div class="col-s2"></div>
-        </div>
-        <br>
-        <br>
-        <!-- Galeria de fotos de prueba  -->
-
-        <div class="row">
-
-            <h4> Pymes </h4>
-            
-            <div class="col-2">
-                <div class="card" style="width: 18rem;">
-                    <img class="img-fluid" src="https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2020/07/papas-fritas-para-freir.jpg" alt="Card image cap">
-                    <div class="card-body" style="text-align: center">
-                        <p class="card-text">Nombre usuario</p>
-                        <a href="" type="button" class="btn btn-success ">Seleccionar </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-1"></div>
-
-            <div class="col-2">
-                <div class="card" style="width: 18rem;">
-                    <img class="img-fluid" src="https://www.ecured.cu/images/1/14/1603480088968.jpg" alt="Card image cap" >
-                    <div class="card-body" style="text-align: center">
-                        <p class="card-text">Nombre usuario</p>
-                        <a href="" type="button" class="btn btn-success ">Seleccionar </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-1"></div>
-
-            <div class="col-2">
-                <div class="card" style="width: 18rem;">
-                    <img class="img-fluid" src="http://web.inia.cl/wp-content/uploads/2018/02/Patagonia-INIA-1a-2-300x282.jpg" alt="Card image cap" >
-                    <div class="card-body" style="text-align: center">
-                        <p class="card-text">Nombre usuario</p>
-                        <a href="" type="button" class="btn btn-success ">Seleccionar </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-1"></div>
-
-            <div class="col-2">
-                <div class="card" style="width: 18rem;">
-                    <img class="img-fluid" src="https://scm-assets.constant.co/scm/unilever/2bb5223be0548fcc55c230aa5f951219/84b57886-fee2-4f98-8920-027f8afd654c.png" alt="Card image cap">
-                    <div class="card-body" style="text-align: center;">
-                        <p class="card-text">Nombre usuario</p>
-                        <a href="" type="button" class="btn btn-success ">Seleccionar </a>
+                    <div class="card-footer justify-content-center">
 
                     </div>
+
                 </div>
-            </div>
 
-
-        </div>
-        <br>
-        <br>
-        <br>
-
-        <!--Fin de primera seccion de categorias -->
-
-
-        <div class="row">
-
-            <h4> Pymes</h4>
-            <div class="col-2">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2020/07/papas-fritas-para-freir.jpg" alt="Card image cap" style="width: 200px; height: 150px; text-align:center">
-                    <div class="card-body" style="text-align: center">
-                        <p class="card-text">Nombre usuario</p>
-                        <a href="" type="button" class="btn btn-success ">Seleccionar </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-1"></div>
-
-            <div class="col-2">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="https://www.ecured.cu/images/1/14/1603480088968.jpg" alt="Card image cap" style="width: 200px; height: 150px; text-align:center">
-                    <div class="card-body" style="text-align: center">
-                        <p class="card-text">Nombre usuario</p>
-                        <a href="" type="button" class="btn btn-success ">Seleccionar </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-1"></div>
-
-            <div class="col-2">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="http://web.inia.cl/wp-content/uploads/2018/02/Patagonia-INIA-1a-2-300x282.jpg" alt="Card image cap" style="width: 200px; height: 150px; text-align:center">
-                    <div class="card-body" style="text-align: center">
-                        <p class="card-text">Nombre usuario</p>
-                        <a href="" type="button" class="btn btn-success ">Seleccionar </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-1"></div>
-
-            <div class="col-2">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="https://scm-assets.constant.co/scm/unilever/2bb5223be0548fcc55c230aa5f951219/84b57886-fee2-4f98-8920-027f8afd654c.png" alt="Card image cap" style="width: 200px; height: 150px; text-align:center">
-                    <div class="card-body" style="text-align: center;">
-                        <p class="card-text">Nombre usuario</p>
-                        <a href="" type="button" class="btn btn-success ">Seleccionar </a>
-
-                    </div>
-                </div>
             </div>
 
         </div>
-        <!-- Fin de las segundas cards de categorias --->
-
-
-    </div> 
-
 </body>
 
 </html>
