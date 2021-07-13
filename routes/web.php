@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\InicioController;
 use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\SoporteController;
+use App\Http\Controllers\ReportesController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\AdminSoporteController;
@@ -19,9 +21,8 @@ use App\Http\Controllers\AdminSoporteController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::resource('/', InicioController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -41,5 +42,8 @@ Route::resource('/soporte', SoporteController::class);
 Route::resource('/administracion', AdminSoporteController::class);
 
 Route::resource('/usuarios', UsuariosController::class);
+Route::post('/usuarios/deshabilitar',[UsuariosController::class,'deshabilitar']);
+
+Route::resource('/reporte',ReportesController::class);
 
 require __DIR__.'/auth.php';

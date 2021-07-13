@@ -43,7 +43,7 @@
         <div class="container">
             <div class="row justify-content-md-center">
                     <div class="col-4">
-                   <a href="welcome"> <p> <strong>Pymes regionales</strong></p></a>
+                   <a href="/"> <p> <strong>Pymes regionales</strong></p></a>
                     </div>
                     <div class="col-5"></div>
                     <div class="col-3">
@@ -116,51 +116,24 @@
              <div class="row">
             
                 <h4> Pymes </h4>
-                <div class="col-2">
-                    <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2020/07/papas-fritas-para-freir.jpg" alt="Card image cap">
-                            <div class="card-body" style="text-align: center">
-                                <p class="card-text">Nombre usuario</p>
-                                <a href="" type="button" class="btn btn-success ">Seleccionar </a>
-                            </div>
-                    </div>
-                </div>
-                
-                <div class="col-1"></div>
-                
-                <div class="col-2">
-                    <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="https://www.ecured.cu/images/1/14/1603480088968.jpg" alt="Card image cap">
-                            <div class="card-body" style="text-align: center">
-                                <p class="card-text">Nombre usuario</p>
-                                <a href="" type="button" class="btn btn-success ">Seleccionar </a>
-                            </div>
-                    </div>
-                </div>
+                @php $cont = 0; @endphp
+                @foreach($pymes as $pyme)
 
-                <div class="col-1"></div>
-
-                <div class="col-2">
-                    <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="http://web.inia.cl/wp-content/uploads/2018/02/Patagonia-INIA-1a-2-300x282.jpg" alt="Card image cap">
-                            <div class="card-body" style="text-align: center">
-                                <p class="card-text">Nombre usuario</p>
-                                <a href="" type="button" class="btn btn-success ">Seleccionar </a>
+                        <div class="col-2">
+                            <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src="{{$pyme->imagen_perfil}}" alt="Card image cap">
+                                    <div class="card-body" style="text-align: center">
+                                        <p class="card-text">{{$pyme->name}}</p>
+                                        <a href="" type="button" class="btn btn-success ">Seleccionar </a>
+                                    </div>
                             </div>
-                    </div>
-                </div>
-               
-                <div class="col-1"></div>
-
-                <div class="col-2">
-                    <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="https://scm-assets.constant.co/scm/unilever/2bb5223be0548fcc55c230aa5f951219/84b57886-fee2-4f98-8920-027f8afd654c.png" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text">Nombre usuario</p>
-                            </div>
-                    </div>
-                </div>
-
+                        </div>
+                        @php $cont = $cont + 1; @endphp
+                        @if($cont < sizeof($pymes))
+                            <div class="col-1"></div>
+                        
+                        @endif
+                @endforeach
                 
              </div>
              <br>

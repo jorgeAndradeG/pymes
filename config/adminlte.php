@@ -188,7 +188,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'perfil',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -257,6 +257,11 @@ return [
             'text' => 'Lista de Usuarios',
             'url'  => 'usuarios',
             'icon' => 'fas fa-users',
+        ],
+        [
+            'text' => 'Reporte Semanal',
+            'url'  => 'reporte',
+            'icon' => 'fas fa-file',
         ],
 
         ['header' => 'labels'],

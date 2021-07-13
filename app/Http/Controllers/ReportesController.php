@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
 
-class UsuariosController extends Controller
+class ReportesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class UsuariosController extends Controller
      */
     public function index()
     {
-        $usuarios = User::all();
-        return view('pymes.administracion.listado-pymes',compact('usuarios'));
+        return view('pymes.admin.reporte');
     }
 
     /**
@@ -82,17 +80,5 @@ class UsuariosController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function deshabilitar(Request $request){
-        $user = User::findOrFail($request['modalid']);
-        if($user->estado == 1){
-            $user->estado = 0;
-        }else{
-            $user->estado = 1;
-        }
-        $user->save();
-
-        return redirect('/usuarios');
     }
 }

@@ -2,7 +2,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Productos')
 
 
 @section('content')
