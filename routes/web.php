@@ -9,6 +9,8 @@ use App\Http\Controllers\ReportesController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\AdminSoporteController;
+use App\Http\Controllers\DetalleProductoController;
+use App\Http\Controllers\VerPymeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,5 +47,9 @@ Route::resource('/usuarios', UsuariosController::class);
 Route::post('/usuarios/deshabilitar',[UsuariosController::class,'deshabilitar']);
 
 Route::resource('/reporte',ReportesController::class);
+
+Route::resource('/pyme', VerPymeController::class);
+
+Route::resource('/DetalleProducto', DetalleProductoController::class);
 
 require __DIR__.'/auth.php';

@@ -12,8 +12,10 @@
     <div class="container">
         <div class="row align-items-start">
             <div class="col-12">
+            <a href="/pyme/{{$usuario->id}}">Ir a perfil publico</a>
+
                 <!-- Botón para activar la función JavaScript de al final y poder editar los datos de perfil.-->
-                <h3 style="text-align:center;">Datos de Perfil  
+                <h3 style="text-align:center;">Datos de Perfil
                 <button type="button" class="btn btn-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="right" title=" Editar Perfil " onclick=editarPerfil()><i class="far fa-edit"></i></button></h3>
                 <br>
                 @if ($errors->any())
