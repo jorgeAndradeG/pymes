@@ -36,6 +36,19 @@
                     </div>
 
                     <div class="form-floating mb-3">
+                        <label for="categoria">Categoría</label>
+                        <select class="form-select form-control" aria-label="Default select example" name="categoria" id="categoria">
+                            @foreach($categorias as $categoria)
+                                @if($categoria->id == $categoriaProducto)
+                                <option value="{{$categoria->id}}" selected>{{$categoria->nombre}}</option>
+                                @else
+                                <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
+                                @endif
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="form-floating mb-3">
                         <label for="imagen">Imagen</label>
                             <img src="/{{$imagen->url_imagen}}" class="img-thumbnail" alt="..." width="200" height="100">
 

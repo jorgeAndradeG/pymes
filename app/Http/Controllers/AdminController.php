@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -132,6 +133,7 @@ class AdminController extends Controller
         $user = User::findOrFail($request['modalid']);
         $user->estado=0;
         $user->save();
+       
         return redirect('/admin');
 
     }

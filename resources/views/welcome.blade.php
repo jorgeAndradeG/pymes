@@ -415,15 +415,18 @@
             border: 5px solid;
 
         }
+        *{
+            background-color:#fafafa;
+        }
     </style>
 </head>
 
 <body class="antialiased">
-    <div class="container">
+    <div class="container" style="">
         <div class="row justify-content-md-center">
             <div class="col-4">
                 <a href="/">
-                    <p> <strong>Pymes regionales</strong></p>
+                    <p> <strong style="color:#505050; font-size:25px;">Pymes regionales</strong></p>
                 </a>
             </div>
             <div class="col-5"></div>
@@ -446,135 +449,125 @@
             </div>
         </div>
 
-    </div>
-    <hr>
-    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h4 style="text-align:center;"><i>El puente entre tú y las Pymes</i></h4>
+            </div>
 
+        </div>
+    <div class="container">
+        @php $cont = 0; @endphp
+        <h4>
+            Ofertas
+        </h4>
         <!-- Carousel de prueba   -->
         <div class="row">
-            <div class="col-2"></div>
-            <div class="col-6">
+            <div class="col-12">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
-
-                        <div class="carousel-item active">
-                            <img src="https://chile.as.com/chile/imagenes/2021/06/18/futbol/1624050093_672321_1624051358_noticia_normal_recorte1.jpg" class="img-fluid" alt="...">
-                        </div>
-
-                        <div class="carousel-item">
-                            <img src="https://imagenes.t13.cl/images/original/2021/06/1624052490-0009ck76m.jpg" class="img-fluid" alt="...">
-                        </div>
-
-                        <div class="carousel-item">
-                            <img src="https://www.wapptv.cl/wp-content/uploads/2021/06/IMG_0952.jpg" class="img-fluid " alt="...">
-                        </div>
+                        @foreach($ofertas as $oferta)
+                            @if($cont == 0)
+                            <div class="carousel-item active" style="text-align:center;">
+                                <h5 style="text-align:center;">{{$oferta->nombre}}</h5>
+                                <a href="/DetalleProducto/{{$oferta->id}}"><img src="{{$oferta->imagen}}" class="img-fluid" alt="..."><p style="text-align:center;"><s>${{$oferta->precio}}</s><b> ${{$oferta->precio_oferta}}</b></p></a>
+                            </div>
+                            @php $cont = $cont+1; @endphp
+                            @else
+                            <div class="carousel-item" style="text-align:center;">
+                                <h5 style="text-align:center;">{{$oferta->nombre}}</h5>
+                                <a href="/DetalleProducto/{{$oferta->id}}"><img src="{{$oferta->imagen}}" class="img-fluid" alt="..."><p style="text-align:center;"><s>${{$oferta->precio}}</s><b> ${{$oferta->precio_oferta}}</b></p></a>
+                            </div>
+                            @endif
+                        @endforeach
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <button style="text-align:center;" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span style="background-color:black;" class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <button style="text-align:center;" class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span style="background-color:black;" class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
             </div>
-            <div class="col-2">
-                "nombre producto en oferta"
-                <br><br><br><br><br><br>
-
-                <p> Precio producto</p>
-                <p> Precio nuevo</p>
-                <p> Pyme que lo vende </p>
-
-            </div>
-            <div class="col-s2"></div>
+     
         </div>
         <br>
+        <hr>
         <br>
         <!-- Galeria de fotos de prueba  -->
 
         <div class="row">
 
             <h4> Pymes </h4>
-            @php $cont = 0; @endphp
+            
             @foreach($pymes as $pyme)
 
-            <div class="col-2">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{$pyme->imagen_perfil}}" alt="Card image cap">
+            <div class="col-3">
+            <a href="{{action('App\Http\Controllers\VerPymeController@show',$pyme->id)}}">
+                <div class="card" style="background-color:#FAFFF7;">
+                    <img class="img-fluid" src="{{$pyme->imagen_perfil}}" alt="Card image cap">
                     <div class="card-body" style="text-align: center">
                         <p class="card-text">{{$pyme->name}}</p>
-                        <a href="{{action('App\Http\Controllers\VerPymeController@show',$pyme->id)}}" type="button" class="btn btn-success">Seleccionar </a>
+                        <div class="d-grid gap-2 d-md-block">
+                        </div>
                     </div>
                 </div>
+                </a>
             </div>
-            @php $cont = $cont + 1; @endphp
-            @if($cont < sizeof($pymes)) <div class="col-1">
-        </div>
-
-        @endif
+           
         @endforeach
 
     </div>
     <br>
-    <br>
+    <hr>
     <br>
 
     <!--Fin de primera seccion de categorias -->
 
 
-    <div class="row">
-
-        <h4> Nombre categoria</h4>
-        <div class="col-2">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2020/07/papas-fritas-para-freir.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    @foreach($categorias as $categoria)
+        <div class="row">
+            <h4><i>Productos Categoría:</i> <b>{{$categoria->nombre}}</b></h4>
+            @foreach($categoria->productos as $producto)
+                <div class="col-3">
+                <a href="{{action('App\Http\Controllers\DetalleProductoController@show',$producto->id)}}">
+                    <div class="card">
+                        <img class="img-fluid" src="{{$producto->imagen}}" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">{{$producto->nombre}}</p>
+                            <p class="card-text">${{$producto->precio}}</p>
+                            <div class="row">
+                            <div class="col-md-4 col-lg-2">
+                              
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
                 </div>
-            </div>
-        </div>
-
-        <div class="col-1"></div>
-
-        <div class="col-2">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="https://www.ecured.cu/images/1/14/1603480088968.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-1"></div>
-
-        <div class="col-2">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="http://web.inia.cl/wp-content/uploads/2018/02/Patagonia-INIA-1a-2-300x282.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-1"></div>
-
-        <div class="col-2">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="https://scm-assets.constant.co/scm/unilever/2bb5223be0548fcc55c230aa5f951219/84b57886-fee2-4f98-8920-027f8afd654c.png" alt="Card image cap">
-                <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
+            @endforeach
+       
+    </div>
+    <br>
+    <hr>
+    <br>
+    @endforeach
+       
 
     </div>
     <!-- Fin de las segundas cards de categorias --->
 
 
     </div>
+<section class="footer">
 
+<hr>
+<p style="text-align:center">Pymes Regionales</p>
+<hr>
+
+</div>
+</section>
 </body>
 
 </html>

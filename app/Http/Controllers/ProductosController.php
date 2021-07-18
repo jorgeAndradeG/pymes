@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Imagen;
 use App\Models\Producto;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 use App\Models\ProductoImagen;
+use App\Models\CategoriaProducto;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 
@@ -30,8 +32,8 @@ class ProductosController extends Controller
      */
     public function create()
     {
-      
-       return view('pymes.productos.create-producto');
+        $categorias = Categoria::all();
+       return view('pymes.productos.create-producto',compact('categorias'));
         //
     }
 
@@ -106,6 +108,11 @@ class ProductosController extends Controller
             "id_imagen" => $imagenCreada->id,
         ]);
 
+        CategoriaProducto::create([
+            "id_categoria" => $request['categoria'],
+            "id_producto" => $productoCreado->id,
+        ]);
+
             return redirect("/productos");
         //
     }
@@ -129,10 +136,13 @@ class ProductosController extends Controller
      */
     public function edit($id)
     {
+        $categorias = Categoria::all();
+        $prodCat = CategoriaProducto::Where('id_producto',$id)->get();
+        $categoriaProducto = $prodCat[0]->id_categoria;
         $producto = Producto::findOrFail($id);
         $idProductoImagen = ProductoImagen::Where('id_producto',$producto->id)->get();
         $imagen = Imagen::findOrFail($idProductoImagen[0]->id_imagen);
-        return view("pymes.productos.edit-productos")->with(["producto" => $producto, "imagen" => $imagen]);
+        return view("pymes.productos.edit-productos", compact('categorias'))->with(["producto" => $producto, "imagen" => $imagen, "categoriaProducto" => $categoriaProducto]);
     }
 
     /**
@@ -202,7 +212,11 @@ class ProductosController extends Controller
                 
             };
         }
-        
+
+        $prodCat = CategoriaProducto::Where('id_producto',$id)->get();
+        $prodCat[0]->id_categoria = $request['categoria'];
+        $prodCat[0]->save();
+
         $producto->save();
 
         return redirect('/productos');

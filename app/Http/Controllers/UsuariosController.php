@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 
 class UsuariosController extends Controller
@@ -88,8 +89,18 @@ class UsuariosController extends Controller
         $user = User::findOrFail($request['modalid']);
         if($user->estado == 1){
             $user->estado = 0;
+            $productos = Producto::Where('id_usuario',$user->id)->get();
+            foreach($productos as $producto){
+                $producto->estado = 0;
+                $producto->save();
+            }
         }else{
             $user->estado = 1;
+            $productos = Producto::Where('id_usuario',$user->id)->get();
+            foreach($productos as $producto){
+                $producto->estado = 1;
+                $producto->save();
+            }
         }
         $user->save();
 

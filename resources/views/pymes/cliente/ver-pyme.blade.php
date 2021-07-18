@@ -14,13 +14,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    a{
+        text-decoration:none;
+        color:#505050;
+    }
+    a:visited{
+        text-decoration:none;
+    }
 
+</style>
 <body>
 <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-4">
-                <a>
-                    <p> <strong>Pymes regionales</strong></p>
+            <a href="/">
+                    <p> <strong style="color:#505050; font-size:25px;">Pymes regionales</strong></p>
                 </a>
             </div>
             <div class="col-5"></div>
@@ -53,54 +62,42 @@
             <div class="col-md-12">
 
                 <div class="card">
-                <a href="javascript:history.back()"><i class="fas fa-arrow-left"></i></a>
+                    <a href="javascript:history.back()"><i class="fas fa-arrow-left"></i></a>
 
-                <h3 style="text-align:center" >{{$pyme->name}}</h3>
-                <br>
-                <img src="{{$pyme->imagen_perfil}}" height=450px style="border-radius:20px;">
-
-                    <div class="card-header">Bienvenido(a)</div>
-                    <div class="card-header">
-                    <p style="float:left"><i class="fab fa-facebook-square"></i>{{$pyme->facebook}}</p> 
-                    <p style="float:right"> <i class="fab fa-instagram-square"></i>{{$pyme->instagram}} </p>
-                    </div>
-
-                    <div class="card-header">Catologo de productos </div>
-                    <div class="card-header" justify-content-center>
- 
-                        <div class="row">
-                            @foreach($productos as $producto)
-                                @if($producto->estado == '1')
-                                <div class="col-md-4 text-md-center">
-                                <br>
-                                <img style="width: 150px; height: 100px" src="/{{$producto->imagen}}" class="img-top" alt="{{$producto->imagen}}">
-
-                                    <h5>{{$producto->nombre}}</h5>
-                                    <p>Precio: ${{$producto->precio}}</p> 
-
-                                    <p>{{$producto->created_at}}</p>       
-
-                                    <a class="btn btn-primary" href="{{action('App\Http\Controllers\DetalleProductoController@show',$producto->id)}}">Detalles</a>
-
-                                </div>
-                                @endif
-
-                            @endforeach
-
-
+                    <h3 style="text-align:center" >{{$pyme->name}}</h3>
+                    <br>
+                    <img src="{{$pyme->imagen_perfil}}" height=450px style="border-radius:20px;">
+                        <div class="card-header">Bienvenido(a)</div>
+                        <div class="card-header">
+                            <p style="float:left"><i class="fab fa-facebook-square"></i> {{$pyme->facebook}}</p> 
+                            <p style="float:right"> <i class="fab fa-instagram"></i> {{$pyme->instagram}} </p>
                         </div>
-
-                    </div>
-
-                    <div class="card-footer justify-content-center">
-
-                    </div>
-
+                        <div class="card-header" style="text-align:center;">Catálogo de productos</div>
+                            <div class="row">
+                                    @foreach($productos as $producto)
+                                        @if($producto->estado == '1')
+                                        <div class="col-3">
+                                            <a href="{{action('App\Http\Controllers\DetalleProductoController@show',$producto->id)}}">
+                                                    <br>
+                                                    <img src="/{{$producto->imagen}}" class="img-fluid" alt="{{$producto->imagen}}">
+                                                    <h5 style="text-align:center;">{{$producto->nombre}}</h5>
+                                                    <p style="text-align:center;">Precio: ${{$producto->precio}}</p> 
+                                                    <p style="text-align:center;">{{$producto->created_at}}</p>       
+                                          
+                                            </a>
+                                        </div>
+                                        @endif
+                                    @endforeach
+                            </div>
+                        </div>
                 </div>
-
             </div>
-
         </div>
+        <section class="footer">
+            <hr>
+            <p style="text-align:center">Pymes Regionales</p>
+            <hr>
+        </section>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

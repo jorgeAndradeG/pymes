@@ -263,6 +263,11 @@ return [
             'url'  => 'reporte',
             'icon' => 'fas fa-file',
         ],
+        [
+            'text' => 'Consultas Soporte Técnico',
+            'url'  => 'administracion',
+            'icon' => 'fas fa-headset',
+        ],
 
         ['header' => 'labels'],
         [

@@ -135,10 +135,15 @@ class PerfilController extends Controller
     public function deshabilitar(Request $request){
         $pass = $request['passDeshabilitar'];
         $usuario = Auth::user();
+        $productos = Producto::where('id_usuario',$usuario->id)->get();
   
         if(Hash::check($pass, $usuario->password)){
             $usuario->estado = 0;
             $usuario->save();
+            foreach($productos as $producto){
+                $producto->estado = 0;
+                $producto->save();
+            }
 
             Auth::guard('web')->logout();
 

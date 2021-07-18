@@ -42,6 +42,15 @@
                     </div>
 
                     <div class="form-floating mb-3">
+                        <label for="categoria">Categoría</label>
+                        <select class="form-select form-control" aria-label="Default select example" name="categoria" id="categoria">
+                            @foreach($categorias as $categoria)
+                                <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="form-floating mb-3">
                         <label for="imagen">Imagen</label>
                         <input type="file" class="form-control" name="file" id="imagen">
                     </div>

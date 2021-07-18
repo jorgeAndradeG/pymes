@@ -9,6 +9,7 @@
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -292,105 +293,7 @@
             grid-template-columns: repeat(1, minmax(0, 1fr))
         }
 
-        @media (min-width:640px) {
-            .sm\:rounded-lg {
-                border-radius: .5rem
-            }
-
-            .sm\:block {
-                display: block
-            }
-
-            .sm\:items-center {
-                align-items: center
-            }
-
-            .sm\:justify-start {
-                justify-content: flex-start
-            }
-
-            .sm\:justify-between {
-                justify-content: space-between
-            }
-
-            .sm\:h-20 {
-                height: 5rem
-            }
-
-            .sm\:ml-0 {
-                margin-left: 0
-            }
-
-            .sm\:px-6 {
-                padding-left: 1.5rem;
-                padding-right: 1.5rem
-            }
-
-            .sm\:pt-0 {
-                padding-top: 0
-            }
-
-            .sm\:text-left {
-                text-align: left
-            }
-
-            .sm\:text-right {
-                text-align: right
-            }
-        }
-
-        @media (min-width:768px) {
-            .md\:border-t-0 {
-                border-top-width: 0
-            }
-
-            .md\:border-l {
-                border-left-width: 1px
-            }
-
-            .md\:grid-cols-2 {
-                grid-template-columns: repeat(2, minmax(0, 1fr))
-            }
-        }
-
-        @media (min-width:1024px) {
-            .lg\:px-8 {
-                padding-left: 2rem;
-                padding-right: 2rem
-            }
-        }
-
-        @media (prefers-color-scheme:dark) {
-            .dark\:bg-gray-800 {
-                --bg-opacity: 1;
-                background-color: #2d3748;
-                background-color: rgba(45, 55, 72, var(--bg-opacity))
-            }
-
-            .dark\:bg-gray-900 {
-                --bg-opacity: 1;
-                background-color: #1a202c;
-                background-color: rgba(26, 32, 44, var(--bg-opacity))
-            }
-
-            .dark\:border-gray-700 {
-                --border-opacity: 1;
-                border-color: #4a5568;
-                border-color: rgba(74, 85, 104, var(--border-opacity))
-            }
-
-            .dark\:text-white {
-                --text-opacity: 1;
-                color: #fff;
-                color: rgba(255, 255, 255, var(--text-opacity))
-            }
-
-            .dark\:text-gray-400 {
-                --text-opacity: 1;
-                color: #cbd5e0;
-                color: rgba(203, 213, 224, var(--text-opacity))
-            }
-        }
+       
     </style>
 
     <style>
@@ -420,17 +323,17 @@
       padding:20px;
       height:100vh;
     } 
-  #detalles{
-    border-radius: 3px;
-        border: 3px solid #B3D8E1;
-  }
-  #descripcion{
-    border-radius: 3px;
-        border: 3px solid #B3D8E1;
-  }
-  #input{
-    width: 100%;
-  }
+    #detalles{
+        border-radius: 3px;
+            border: 3px solid #B3D8E1;
+    }
+    #descripcion{
+        border-radius: 3px;
+            border: 3px solid #B3D8E1;
+    }
+    #input{
+        width: 100%;
+    }
   </style>
     <title>Producto</title>
 </head>
@@ -439,8 +342,8 @@
 <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-4">
-                <a href="welcome">
-                    <p href="/"> <strong>Pymes regionales</strong></p>
+            <a href="/">
+                    <p> <strong style="color:#505050; font-size:25px;">Pymes regionales</strong></p>
                 </a>
             </div>
             <div class="col-5"></div>
@@ -467,63 +370,61 @@
     <hr>
   
     <div class="container">
-<div class="center">
-<div class="card mb-3">
-  <img src="/{{$producto->imagen}}" class="card-img" alt="...">
-</div>
-<div class="col-md-8">
-      <div class="card-body">
-      <h2 class="big">{{$producto->nombre}}</h2>
-        <hr>
-        <div id="descripcion">
-        <h5 class="title">Descripción</h5>
-        
-        <p class="text">- {{$producto->descripcion}}</p>
-        </div>
-        <hr>
+    <a href="javascript:history.back()"><i class="fas fa-arrow-left"></i></a>
         <br>
-        <div id="detalles">
-        <h5 class="title">Detalles</h5>
-        
-        <p class=text>- Stock: {{$producto->stock}}</p>
-        <p class=text>- Código: {{$producto->id   }}</p>
-        <p class=text>- Precio: $ {{$producto->precio   }} CLP</p>
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-4">
+                <div>
+                    <img src="/{{$producto->imagen}}" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-6">
+                        <h2 class="big" style="text-align:center">{{$producto->nombre}}</h2>      
+                            <p style="text-align:center"><i>{{$producto->descripcion}}</i></p>
+                            <h5>Detalles</h5>        
+                            <p> Stock: {{$producto->stock}}</p>
+                            <p> Código: {{$producto->id}}</p>
+                            @if(isset($producto->precio_oferta))
+                                <p> Precio: <s>${{$producto->precio}}</s><b> ${{$producto->precio_oferta}}</b></p>
+                            @else
+                                <p> Precio: $ {{$producto->precio}}</p>
+                            @endif
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Enviar Mensaje
+                            </button>
+            </div>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Envíale un mensaje</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <input id= "input" type="text" placeholder="Nombre" > </input>
+                                    <br>
+                                    <br>
+                                    <input id= "input" type="email" placeholder="Correo" > </input>
+                                    <br>
+                                    <br>
+                                    <textarea id= "input" placeholder="Mensaje"></textarea>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+                                    <button type="button" class="btn btn-primary">Enviar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+         
         </div>
-        <br>
+</div>
+    <section class="footer">
         <hr>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Enviar Mensaje
-        </button>
-        </div>  
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-          <div class="modal-content">
-          <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Envíale un mensaje</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-
-<input id= "input" type="text" placeholder="Nombre" > </input>
-<br>
-<br>
-
-<input id= "input" type="email" placeholder="Correo" > </input>
-<br>
-<br>
-<textarea id= "input" placeholder="Mensaje"></textarea>
-</div>
-<div class="modal-footer">
-<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
-<button type="button" class="btn btn-primary">Enviar</button>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-
-</div>
+        <p style="text-align:center">Pymes Regionales</p>
+        <hr>
+    </section>
 </body>
-
 </html>

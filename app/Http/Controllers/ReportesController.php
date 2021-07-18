@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ReportesController extends Controller
@@ -13,7 +14,12 @@ class ReportesController extends Controller
      */
     public function index()
     {
-        return view('pymes.admin.reporte');
+        $fecha = getdate();
+        $fechaFin = $fecha["year"] . "-" . $fecha["mon"] . "-" . $fecha["mday"] . " " . $fecha["hours"] . ":" . $fecha["minutes"] . ":" . $fecha["seconds"]; 
+        $annoInicio = intval($fecha["year"]) - 1;
+        $fechaInicio = $annoInicio . "-" . $fecha["mon"] . "-" . $fecha["mday"] . " " . $fecha["hours"] . ":" . $fecha["minutes"] . ":" . $fecha["seconds"]; 
+        $users = User::whereBetween('created_at',[$fechaInicio,$fechaFin])->get();
+        return view('pymes.admin.reporte',compact('users'));
     }
 
     /**
