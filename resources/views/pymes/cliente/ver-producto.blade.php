@@ -292,8 +292,6 @@
         .grid-cols-1 {
             grid-template-columns: repeat(1, minmax(0, 1fr))
         }
-
-       
     </style>
 
     <style>
@@ -303,13 +301,7 @@
         }
     </style>
    <style>
-       .card img{
-        width: 300px;
-        height: 400px;
-        border-radius: 30px;
-        border: 1px solid #107CDE;
-    }
-
+       
     .card{
 
       border-radius: 300px;
@@ -395,30 +387,6 @@
                                 Enviar Mensaje
                             </button>
             </div>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Envíale un mensaje</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <input id= "input" type="text" placeholder="Nombre" > </input>
-                                    <br>
-                                    <br>
-                                    <input id= "input" type="email" placeholder="Correo" > </input>
-                                    <br>
-                                    <br>
-                                    <textarea id= "input" placeholder="Mensaje"></textarea>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
-                                    <button type="button" class="btn btn-primary">Enviar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-         
         </div>
 </div>
     <section class="footer">
@@ -426,5 +394,37 @@
         <p style="text-align:center">Pymes Regionales</p>
         <hr>
     </section>
+
+  
+    
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Envíale un mensaje</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form action="">
+                                    <div class="modal-body">
+                                        <label for="nombre">Nombre</label>
+                                        <input class="form-control" id="nombre" type="text" placeholder="Nombre" required> </input>
+                                        <br>
+                                        <label for="correo">Correo</label>
+                                        <input class="form-control" id="correo" type="email" placeholder="Correo" required> </input>
+                                        <br>
+                                        <label for="mensaje">Mensaje</label>
+                                        <br>
+                                        <textarea class="form-control" id="mensaje" placeholder="Mensaje" required></textarea>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+                                        <button type="submit" class="btn btn-primary">Enviar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+            
 </body>
 </html>

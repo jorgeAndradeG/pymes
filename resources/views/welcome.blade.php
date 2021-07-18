@@ -398,6 +398,11 @@
                 color: rgba(203, 213, 224, var(--text-opacity))
             }
         }
+        @media screen and (max-width: 601px) {
+        p{
+            font-size: 8px;
+        }
+        }
     </style>
 
     <style>
@@ -426,7 +431,7 @@
         <div class="row justify-content-md-center">
             <div class="col-4">
                 <a href="/">
-                    <p> <strong style="color:#505050; font-size:25px;">Pymes regionales</strong></p>
+                    <p> <strong style="color:#505050;font-size:2vw;;">Pymes regionales</strong></p>
                 </a>
             </div>
             <div class="col-5"></div>
@@ -468,13 +473,13 @@
                         @foreach($ofertas as $oferta)
                             @if($cont == 0)
                             <div class="carousel-item active" style="text-align:center;">
-                                <h5 style="text-align:center;">{{$oferta->nombre}}</h5>
+                                <h5 style="text-align:center;font-size:3vw;">{{$oferta->nombre}}</h5>
                                 <a href="/DetalleProducto/{{$oferta->id}}"><img src="{{$oferta->imagen}}" class="img-fluid" alt="..."><p style="text-align:center;"><s>${{$oferta->precio}}</s><b> ${{$oferta->precio_oferta}}</b></p></a>
                             </div>
                             @php $cont = $cont+1; @endphp
                             @else
                             <div class="carousel-item" style="text-align:center;">
-                                <h5 style="text-align:center;">{{$oferta->nombre}}</h5>
+                                <h5 style="text-align:center;font-size:3vw;">{{$oferta->nombre}}</h5>
                                 <a href="/DetalleProducto/{{$oferta->id}}"><img src="{{$oferta->imagen}}" class="img-fluid" alt="..."><p style="text-align:center;"><s>${{$oferta->precio}}</s><b> ${{$oferta->precio_oferta}}</b></p></a>
                             </div>
                             @endif
@@ -507,7 +512,7 @@
             <a href="{{action('App\Http\Controllers\VerPymeController@show',$pyme->id)}}">
                 <div class="card" style="background-color:#FAFFF7;">
                     <img class="img-fluid" src="{{$pyme->imagen_perfil}}" alt="Card image cap">
-                    <div class="card-body" style="text-align: center">
+                    <div class="card-body">
                         <p class="card-text">{{$pyme->name}}</p>
                         <div class="d-grid gap-2 d-md-block">
                         </div>
