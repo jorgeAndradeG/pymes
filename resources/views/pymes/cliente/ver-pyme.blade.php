@@ -81,7 +81,7 @@
                                                     <br>
                                                     <img src="/{{$producto->imagen}}" class="img-fluid" alt="{{$producto->imagen}}">
                                                     <h5 style="text-align:center;">{{$producto->nombre}}</h5>
-                                                    <p style="text-align:center;">Precio: ${{$producto->precio}}</p> 
+                                                    <p style="text-align:center;">Precio: $@php echo $nombre_format_francais = number_format($producto->precio, 0, ',', '.'); @endphp</p> 
                                                     <p style="text-align:center;">{{$producto->fecha}}</p>       
                                           
                                             </a>

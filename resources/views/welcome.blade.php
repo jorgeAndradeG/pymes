@@ -474,13 +474,13 @@
                             @if($cont == 0)
                             <div class="carousel-item active" style="text-align:center;">
                                 <h5 style="text-align:center;font-size:3vw;">{{$oferta->nombre}}</h5>
-                                <a href="/DetalleProducto/{{$oferta->id}}"><img src="{{$oferta->imagen}}" class="img-fluid" alt="..."><p style="text-align:center;"><s>${{$oferta->precio}}</s><b> ${{$oferta->precio_oferta}}</b></p></a>
+                                <a href="/DetalleProducto/{{$oferta->id}}"><img src="{{$oferta->imagen}}" class="img-fluid" alt="..."><p style="text-align:center;"><s>$@php echo $nombre_format_francais = number_format($oferta->precio, 0, ',', '.'); @endphp</s><b>$@php echo $nombre_format_francais = number_format($oferta->precio_oferta, 0, ',', '.'); @endphp</b></p></a>
                             </div>
                             @php $cont = $cont+1; @endphp
                             @else
                             <div class="carousel-item" style="text-align:center;">
                                 <h5 style="text-align:center;font-size:3vw;">{{$oferta->nombre}}</h5>
-                                <a href="/DetalleProducto/{{$oferta->id}}"><img src="{{$oferta->imagen}}" class="img-fluid" alt="..."><p style="text-align:center;"><s>${{$oferta->precio}}</s><b> ${{$oferta->precio_oferta}}</b></p></a>
+                                <a href="/DetalleProducto/{{$oferta->id}}"><img src="{{$oferta->imagen}}" class="img-fluid" alt="..."><p style="text-align:center;"><s>$@php echo $nombre_format_francais = number_format($oferta->precio, 0, ',', '.'); @endphp</s><b> $@php echo $nombre_format_francais = number_format($oferta->precio_oferta, 0, ',', '.'); @endphp</b></p></a>
                             </div>
                             @endif
                         @endforeach
@@ -542,7 +542,7 @@
                                 <img class="img-fluid" src="{{$producto->imagen}}" alt="Card image cap">
                                 <div class="card-body">
                                     <p class="card-text">{{$producto->nombre}}</p>
-                                    <p class="card-text">${{$producto->precio}}</p>
+                                    <p class="card-text">$@php echo $nombre_format_francais = number_format($producto->precio, 0, ',', '.'); @endphp</p>
                                     <div class="row">
                                     <div class="col-md-4 col-lg-2">
                                     

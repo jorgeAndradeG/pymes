@@ -379,9 +379,9 @@
                             <p> Stock: {{$producto->stock}}</p>
                             <p> Código: {{$producto->id}}</p>
                             @if(isset($producto->precio_oferta))
-                                <p> Precio: <s>${{$producto->precio}}</s><b> ${{$producto->precio_oferta}}</b></p>
+                                <p> Precio: <s>$@php echo $nombre_format_francais = number_format($producto->precio, 0, ',', '.'); @endphp</s><b> $@php echo $nombre_format_francais = number_format($producto->precio_oferta, 0, ',', '.'); @endphp</b></p>
                             @else
-                                <p> Precio: $ {{$producto->precio}}</p>
+                                <p> Precio: $@php echo $nombre_format_francais = number_format($producto->precio, 0, ',', '.'); @endphp</p>
                             @endif
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Enviar Mensaje
