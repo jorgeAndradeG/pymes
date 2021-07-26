@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *

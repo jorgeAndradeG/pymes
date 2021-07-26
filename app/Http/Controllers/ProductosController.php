@@ -74,10 +74,11 @@ class ProductosController extends Controller
             $formato = explode(".",$nombre);
             $formato = end($formato);
 
+            $categorias = Categoria::all();
             if (strtolower($formato) != "jpg" && strtolower($formato) != "jpeg" && strtolower($formato) != "png" )
             {
                 //CUANDO NO ES IMAGEN
-                return view('pymes.productos.create-producto')->with(['msg' => 'Ingrese una imagen con formato válido (JPG, PNG o JPEG)']); //RETORNAMOS LA VISTA Y EL MENSAJE DE ERROR
+                return view('pymes.productos.create-producto',compact('categorias'))->with(['msg' => 'Ingrese una imagen con formato válido (JPG, PNG o JPEG)']); //RETORNAMOS LA VISTA Y EL MENSAJE DE ERROR
             } else if(strtolower($formato) == "jpg" || strtolower($formato) == "jpeg" || strtolower($formato) == "png") //CUANDO SI ES UNA IMAGEN
             {
             
@@ -94,7 +95,7 @@ class ProductosController extends Controller
             "stock" =>$request->stock,
             "id_usuario" => $user->id,
             "es_oferta" => $oferta,
-            "precio_oferta" =>$request->precio_oferta,
+            "precio_oferta" =>$request['precio_oferta'],
             "estado" => $estado,
             "descripcion" => $request->descripcion,           
             ]);

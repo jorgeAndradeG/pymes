@@ -56,6 +56,7 @@ class VerPymeController extends Controller
             if(isset($imagen[0])){
                 $imagen = Imagen::findOrFail($imagen[0]->id_imagen);
                 $producto->imagen = $imagen->url_imagen;
+                $producto->fecha = date('d-m-Y',strtotime($producto->created_at));
             }
        }
         return view('pymes.cliente.ver-pyme',compact('productos'))->with(['pyme'=>$pyme]);

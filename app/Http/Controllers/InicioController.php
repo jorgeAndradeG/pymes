@@ -23,7 +23,7 @@ class InicioController extends Controller
         $ofertas = Producto::Where('es_oferta',1)->where('estado',1)->inRandomOrder()->paginate(3);
         $categorias = Categoria::all();
         foreach($categorias as $categoria){
-            $prodCat = CategoriaProducto::Where('id_categoria',$categoria->id)->get();
+            $prodCat = CategoriaProducto::Where('id_categoria',$categoria->id)->inRandomOrder()->paginate(4);
             $productosCategoria = array();
             foreach($prodCat as $producto){
                 $productoFinal = Producto::findOrFail($producto->id_producto);

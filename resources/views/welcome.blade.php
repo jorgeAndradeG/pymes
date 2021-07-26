@@ -507,20 +507,20 @@
             <h4> Pymes </h4>
             
             @foreach($pymes as $pyme)
-
-            <div class="col-3">
-            <a href="{{action('App\Http\Controllers\VerPymeController@show',$pyme->id)}}">
-                <div class="card" style="background-color:#FAFFF7;">
-                    <img class="img-fluid" src="{{$pyme->imagen_perfil}}" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text">{{$pyme->name}}</p>
-                        <div class="d-grid gap-2 d-md-block">
+                @if(isset($pyme->imagen_perfil))
+                    <div class="col-3">
+                    <a href="{{action('App\Http\Controllers\VerPymeController@show',$pyme->id)}}">
+                        <div class="card" style="background-color:#FAFFF7;">
+                            <img class="img-fluid" src="{{$pyme->imagen_perfil}}" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text">{{$pyme->name}}</p>
+                                <div class="d-grid gap-2 d-md-block">
+                                </div>
+                            </div>
                         </div>
+                        </a>
                     </div>
-                </div>
-                </a>
-            </div>
-           
+           @endif
         @endforeach
 
     </div>
@@ -535,22 +535,24 @@
         <div class="row">
             <h4><i>Productos Categoría:</i> <b>{{$categoria->nombre}}</b></h4>
             @foreach($categoria->productos as $producto)
-                <div class="col-3">
-                <a href="{{action('App\Http\Controllers\DetalleProductoController@show',$producto->id)}}">
-                    <div class="card">
-                        <img class="img-fluid" src="{{$producto->imagen}}" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">{{$producto->nombre}}</p>
-                            <p class="card-text">${{$producto->precio}}</p>
-                            <div class="row">
-                            <div class="col-md-4 col-lg-2">
-                              
+                @if($producto->estado == 1)
+                    <div class="col-3">
+                        <a href="{{action('App\Http\Controllers\DetalleProductoController@show',$producto->id)}}">
+                            <div class="card">
+                                <img class="img-fluid" src="{{$producto->imagen}}" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text">{{$producto->nombre}}</p>
+                                    <p class="card-text">${{$producto->precio}}</p>
+                                    <div class="row">
+                                    <div class="col-md-4 col-lg-2">
+                                    
+                                    </div>
+                                    </div>
+                                </div>
                             </div>
-                            </div>
-                        </div>
+                            </a>
                     </div>
-                    </a>
-                </div>
+                @endif
             @endforeach
        
     </div>

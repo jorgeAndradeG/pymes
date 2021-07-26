@@ -84,7 +84,8 @@
                         @if(isset($usuario->imagen_perfil)) <!-- SI TIENE FOTO DE PERFIL LA MUESTRA-->
                             <img src="{{$usuario->imagen_perfil}}" class="img-thumbnail" alt="..." width="200" height="100">
                         @else <!-- SI NO TIENE FOTO DE PERFIL LE INFORMA -->
-                            <p style="text-align:center; color:red;">Sin Imagen de Perfil... Aún!</p>
+                            <p style="text-align:center; color:red;">Sin Imagen de Perfil... Aún! Recuerda que sin imagen de perfil, no saldrás en las búsquedas ni
+                            en inicio.</p>
                         @endif
                         <br>
                         <label for="imagen">Cambiar Imagen</label>
