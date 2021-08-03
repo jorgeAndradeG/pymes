@@ -259,7 +259,7 @@ return [
             'icon' => 'fas fa-users',
         ],
         [
-            'text' => 'Reporte Semanal',
+            'text' => 'Reporte Anual',
             'url'  => 'reporte',
             'icon' => 'fas fa-file',
         ],
@@ -268,23 +268,13 @@ return [
             'url'  => 'administracion',
             'icon' => 'fas fa-headset',
         ],
+         [
+            'text' => 'Administradores',
+            'url'  => 'admin',
+            'icon' => 'fas fa-user-shield',
+        ],
 
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+  
     ],
 
     /*

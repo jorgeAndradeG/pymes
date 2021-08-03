@@ -11,7 +11,7 @@
 <div class="container-fluid">
 
     <div class="form-floating mb-3" style="text-align:right;">
-
+        <h3 style="text-align:center;">Consulta Soporte Técnico</h3>
     </div>
     <br>
     <table class="table">

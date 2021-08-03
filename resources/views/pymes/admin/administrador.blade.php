@@ -8,6 +8,8 @@
 @section('content')
 <div class="container-fluid">
 
+<h3 style="text-align:center;">Administradores</h3>
+
 <div class="form-floating mb-3" style="text-align:right;">
     <a href="{{action('App\Http\Controllers\AdminController@create')}}" type="button" class="btn btn-success ">Agregar Administrador</a>
 </div>
@@ -46,7 +48,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">deshabilitar administrador</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Deshabilitar administrador</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 
